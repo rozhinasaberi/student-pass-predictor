@@ -25,7 +25,7 @@ The dataset comes from the **UCI Machine Learning Repository – Student Perform
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - Python
 - Pandas
