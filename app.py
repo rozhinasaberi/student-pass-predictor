@@ -171,7 +171,7 @@ EDUCATION_MAP = {
 
 @st.cache_resource
 def load_model():
-    return joblib.load("best_model_rojina.pkl")
+   return joblib.load("pipeline_rojina.pkl")
 
 
 def build_input_row(values: dict) -> pd.DataFrame:
