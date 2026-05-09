@@ -1,92 +1,56 @@
-#  Student Pass Predictor
+# Student Pass Predictor
 
-A machine learning web application that predicts whether a student will **pass or fail** based on academic, social, and lifestyle factors.
+A machine learning Streamlit application that predicts whether a student is likely to **pass or fail** based on academic, social, and lifestyle factors.
 
- **Live App:**  
-[(https://student-pass-predictor-rojinasaberiapps.streamlit.app/)](https://student-pass-predictor-rojinasaberiapps.streamlit.app/)
+Live demo: [student-pass-predictor-rojinasaberiapps.streamlit.app](https://student-pass-predictor-rojinasaberiapps.streamlit.app/)
 
----
+## What This Project Is About
 
-##  Project Overview
+This project uses supervised learning to analyze student performance patterns and generate a pass/fail prediction from user-provided inputs. It is designed as an applied machine learning project with a simple web interface for real-time predictions.
 
-This project uses a **Decision Tree Classifier** built with Scikit-learn to analyze student performance data and predict outcomes.
+This is an **AI / machine learning classification project** and a **deployed Streamlit web app**.
 
-The dataset comes from the **UCI Machine Learning Repository – Student Performance Dataset**.
-
----
-
-##  Features
-
-- Predict pass/fail based on student inputs
-- Clean and user-friendly web interface
-- Real-time predictions
-- Uses a trained machine learning pipeline
-- Deployed using Streamlit Cloud
-
----
-
-##  Tech Stack
-
-- Python
-- Pandas
-- Scikit-learn
-- Streamlit
-- Joblib
-
----
-
-##  Dataset
-
-- Source: UCI Student Performance Dataset
-- File used: `student-por.csv`
-- Total records: 649 students
-
----
-
-##  Model Details
+## Model Overview
 
 - Algorithm: Decision Tree Classifier
 - Criterion: Entropy
-- Tuned using RandomizedSearchCV
-- Final pipeline includes:
-  - One-hot encoding for categorical variables
-  - Decision tree model
+- Tuning method: RandomizedSearchCV
+- Pipeline: one-hot encoding plus trained decision tree model
 
----
+## Dataset
 
-##  Performance
+- Source: UCI Student Performance Dataset
+- File used: `student-por.csv`
+- Records: 649 students
 
-| Metric      | Score |
-|------------|------|
-| Accuracy   | ~69% |
-| Precision  | ~71% |
-| Recall     | ~69% |
+## Performance
 
----
+- Accuracy: about 69%
+- Precision: about 71%
+- Recall: about 69%
 
-##  Key Insight
+One of the main findings from the project is that **past failures** were the strongest predictor of student outcome.
 
-The most important feature in predicting student success was:
+## Tech Stack
 
- **Number of past failures**
+- Python
+- Streamlit
+- pandas
+- scikit-learn
+- joblib
 
-Students with previous failures were significantly more likely to fail again.
+## Main Files
 
----
+- `app.py` - Streamlit app
+- `pipeline_rojina.pkl` - full ML pipeline
+- `best_model_rojina.pkl` - trained model
+- `student-por.csv` - dataset
+- `decision_tree_rojina.png` - tree visualization
+- `requirements.txt` - dependencies
 
-##  Files Included
-
-- `app.py` → Streamlit web app
-- `pipeline_rojina.pkl` → full ML pipeline
-- `best_model_rojina.pkl` → trained model
-- `requirements.txt` → dependencies
-- `student-por.csv` → dataset
-- `decision_tree_rojina.png` → model visualization
-
----
-
-##  How to Run Locally
+## Run Locally
 
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
+```
